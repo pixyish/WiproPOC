@@ -43,25 +43,37 @@ class WPListViewController: UIViewController {
         self.tblView.register(UITableViewCell.self, forCellReuseIdentifier: KConstant.cellIdentifier)
         self.tblView.rowHeight = UITableView.automaticDimension
         self.tblView.estimatedRowHeight = 44
-        // implement pull to refresh functionality in tableview
+        // implementing pull to refresh functionality in tableview
         self.tblView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refreshItemData(_:)), for: .valueChanged)
         
         self.callApi()
     }
     
+    //pull feature
+    @objc private func refreshItemData(_ sender: Any) {
+        // Fetch item Data by using pull to refresh
+        self.callApi()
+        self.refreshControl.endRefreshing()
+    }
+    
+    // api call
     func callApi() {
-        WPApiCall.sharedInstance.listAPI { (success, message, response) in
+        WPApiCall.sharedInstance.listAPI(view: self.view) { [weak self] (success, message, response) in
            if success && message.isEmpty {
-            self.arrayDataList.removeAll()
-            print(self.arrayDataList.count)
+            
+            DispatchQueue.main.async {
+                Loader.hideIndicator(View: self?.view ?? UIView())
+            }
+            self?.arrayDataList.removeAll()
             if let rows = response?.rows {
-                self.arrayDataList = rows
+                self?.arrayDataList = rows
                     // update UI using the response here
                     DispatchQueue.main.async {
-                        self.navigationItem.title = response?.title
+                        self?.navigationItem.title = response?.title
                         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
-                        self.navigationController?.navigationBar.titleTextAttributes = textAttributes
-                        self.tblView.reloadData()
+                        self?.navigationController?.navigationBar.titleTextAttributes = textAttributes
+                        self?.tblView.reloadData()
                     }
                 }
             }

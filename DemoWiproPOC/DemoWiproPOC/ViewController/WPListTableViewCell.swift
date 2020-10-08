@@ -47,6 +47,7 @@ class WPListTableViewCell: UITableViewCell {
         self.textLabel?.text = info.title ?? "N/A"
         self.detailTextLabel?.text = info.description  ?? "N/A"
         self.imageView?.sd_setImage(with: URL(string: info.imageHref ?? ""), placeholderImage: UIImage(named: "placeHolderImgIcon"))
+        
     }
     
 }

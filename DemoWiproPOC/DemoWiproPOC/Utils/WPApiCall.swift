@@ -12,8 +12,12 @@ class WPApiCall: NSObject {
     
     static let sharedInstance = WPApiCall()
     
-    func listAPI (completionHandler: @escaping (_ success: Bool, _ message: String, _ response : ListInfo?) -> Void) {
+    func listAPI (view : UIView,  completionHandler: @escaping (_ success: Bool, _ message: String, _ response : ListInfo?) -> Void) {
         
+        DispatchQueue.main.async {
+            Loader.showIndicator(withTitle: KConstant.indicatorTitle, and: "", and : view)
+        }
+
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
         let url = URL(string: KConstant.url)!
