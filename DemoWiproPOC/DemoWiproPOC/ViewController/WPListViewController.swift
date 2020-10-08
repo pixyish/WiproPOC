@@ -59,21 +59,33 @@ class WPListViewController: UIViewController {
     
     // api call
     func callApi() {
+        
+        let status = Reach().connectionStatus()
+        switch status {
+        case .unknown, .offline:
+            self.showAlert(_title_str: "You are not connected to the internet")
+            return
+            
+        case .online(.wwan):
+            print("Connected via WWAN")
+        case .online(.wiFi):
+            print("Connected via WiFi")
+        }
+        
         WPApiCall.sharedInstance.listAPI(view: self.view) { [weak self] (success, message, response) in
            if success && message.isEmpty {
-            
-            DispatchQueue.main.async {
-                Loader.hideIndicator(View: self?.view ?? UIView())
-            }
-            self?.arrayDataList.removeAll()
-            if let rows = response?.rows {
-                self?.arrayDataList = rows
-                    // update UI using the response here
-                    DispatchQueue.main.async {
-                        self?.navigationItem.title = response?.title
-                        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
-                        self?.navigationController?.navigationBar.titleTextAttributes = textAttributes
-                        self?.tblView.reloadData()
+                DispatchQueue.main.async {
+                    Loader.hideIndicator(View: self?.view ?? UIView())
+                }
+                self?.arrayDataList.removeAll()
+                if let rows = response?.rows {
+                    self?.arrayDataList = rows
+                        // update UI using the response here
+                        DispatchQueue.main.async {
+                            self?.navigationItem.title = response?.title
+                            let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+                            self?.navigationController?.navigationBar.titleTextAttributes = textAttributes
+                            self?.tblView.reloadData()
                     }
                 }
             }

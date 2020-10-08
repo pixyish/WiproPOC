@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		4BF21A35252F1638004237CE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF21A34252F1638004237CE /* Constants.swift */; };
 		4BF21A37252F1655004237CE /* WPApiCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF21A36252F1655004237CE /* WPApiCall.swift */; };
 		4BF21A39252F1894004237CE /* WPListInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF21A38252F1894004237CE /* WPListInfo.swift */; };
+		4BF21A41252F3E3E004237CE /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF21A40252F3E3E004237CE /* Reach.swift */; };
 		7F6B856AED19213A4262C0D4 /* Pods_DemoWiproPOC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7B3D3618B725EE0AF28F18 /* Pods_DemoWiproPOC.framework */; };
 		CE23F191C867D28579EB3218 /* Pods_DemoWiproPOCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE216FCBF0B39E54035484F /* Pods_DemoWiproPOCTests.framework */; };
 		E473B86C836D777754F98960 /* Pods_DemoWiproPOC_DemoWiproPOCUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F6485F715330CC88AA5526E /* Pods_DemoWiproPOC_DemoWiproPOCUITests.framework */; };
@@ -58,6 +59,7 @@
 		4BF21A34252F1638004237CE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4BF21A36252F1655004237CE /* WPApiCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPApiCall.swift; sourceTree = "<group>"; };
 		4BF21A38252F1894004237CE /* WPListInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPListInfo.swift; sourceTree = "<group>"; };
+		4BF21A40252F3E3E004237CE /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
 		4F2E86000E011AC32DB82B06 /* Pods-DemoWiproPOC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoWiproPOC.debug.xcconfig"; path = "Target Support Files/Pods-DemoWiproPOC/Pods-DemoWiproPOC.debug.xcconfig"; sourceTree = "<group>"; };
 		4F6485F715330CC88AA5526E /* Pods_DemoWiproPOC_DemoWiproPOCUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoWiproPOC_DemoWiproPOCUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60B1E24041AEC4414DD7D9A9 /* Pods-DemoWiproPOC-DemoWiproPOCUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoWiproPOC-DemoWiproPOCUITests.release.xcconfig"; path = "Target Support Files/Pods-DemoWiproPOC-DemoWiproPOCUITests/Pods-DemoWiproPOC-DemoWiproPOCUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -115,7 +117,6 @@
 				E6A47FDBC23031B6F83A90D6 /* Pods-DemoWiproPOCTests.debug.xcconfig */,
 				2B207ADE1EA59982DC7C9C1E /* Pods-DemoWiproPOCTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -152,6 +153,7 @@
 				4BF219FC252EFB51004237CE /* SceneDelegate.swift */,
 				4BF21A03252EFB54004237CE /* Assets.xcassets */,
 				4BF21A08252EFB54004237CE /* Info.plist */,
+				4BF21A3F252F3E3E004237CE /* Reachabilty */,
 			);
 			path = DemoWiproPOC;
 			sourceTree = "<group>";
@@ -205,6 +207,14 @@
 				4BF21A36252F1655004237CE /* WPApiCall.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		4BF21A3F252F3E3E004237CE /* Reachabilty */ = {
+			isa = PBXGroup;
+			children = (
+				4BF21A40252F3E3E004237CE /* Reach.swift */,
+			);
+			path = Reachabilty;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,6 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BF21A35252F1638004237CE /* Constants.swift in Sources */,
+				4BF21A41252F3E3E004237CE /* Reach.swift in Sources */,
 				4BF21A37252F1655004237CE /* WPApiCall.swift in Sources */,
 				4BF21A32252F08D3004237CE /* WPListTableViewCell.swift in Sources */,
 				4BF219FB252EFB51004237CE /* AppDelegate.swift in Sources */,

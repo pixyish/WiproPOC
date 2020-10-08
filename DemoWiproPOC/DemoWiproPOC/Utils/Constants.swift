@@ -27,3 +27,14 @@ class Loader {
        MBProgressHUD.hide(for: View, animated: true)
     }
 }
+
+extension UIViewController {
+    func showAlert(_title_str : String) {
+        let alert = UIAlertController(title: "No Internet", message: _title_str,         preferredStyle: UIAlertController.Style.alert)
+
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { _ in
+            //Cancel Action
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+}
