@@ -10,20 +10,8 @@ import UIKit
 
 class WPListTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        
-    }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setCellUI() {
         self.selectionStyle = UITableViewCell.SelectionStyle.none
         let margin_contentView = self.contentView.layoutMarginsGuide
         let margin_ImageView = self.imageView?.layoutMarginsGuide
@@ -47,6 +35,16 @@ class WPListTableViewCell: UITableViewCell {
         self.detailTextLabel?.leadingAnchor.constraint(equalTo: margin_ImageView!.leadingAnchor, constant: 50).isActive = true
         self.detailTextLabel?.trailingAnchor.constraint(equalTo: margin_contentView.trailingAnchor, constant: 0).isActive = true
         self.detailTextLabel?.bottomAnchor.constraint(equalTo: margin_contentView.bottomAnchor, constant: 0).isActive = true
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setCellInfo(info:Rows) {
+        self.textLabel?.text = info.title ?? "N/A"
+        self.detailTextLabel?.text = info.description  ?? "N/A"
+        
     }
     
 }

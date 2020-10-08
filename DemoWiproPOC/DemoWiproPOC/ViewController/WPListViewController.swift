@@ -12,6 +12,7 @@ class WPListViewController: UIViewController {
     
     private var tblView = UITableView()
     private let refreshControl = UIRefreshControl()
+    private var arrayDataList = [Rows]()
     
     //MARK :- Life cycle
     override func viewDidLoad() {
@@ -44,28 +45,44 @@ class WPListViewController: UIViewController {
         self.tblView.estimatedRowHeight = 44
         // implement pull to refresh functionality in tableview
         self.tblView.refreshControl = refreshControl
-        self.tblView.reloadData()
+        
+        self.callApi()
     }
     
+    func callApi() {
+        WPApiCall.sharedInstance.listAPI { (success, message, response) in
+           if success && message.isEmpty {
+            self.arrayDataList.removeAll()
+            print(self.arrayDataList.count)
+            if let rows = response?.rows {
+                self.arrayDataList = rows
+                    // update UI using the response here
+                    DispatchQueue.main.async {
+                        self.navigationItem.title = response?.title
+                        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+                        self.navigationController?.navigationBar.titleTextAttributes = textAttributes
+                        self.tblView.reloadData()
+                    }
+                }
+            }
+        }
+    }
 }
 
 // MARK :- UITableViewDataSource,UITableViewDelegate
 extension WPListViewController: UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return self.arrayDataList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = WPListTableViewCell(style: .default, reuseIdentifier: KConstant.cellIdentifier)
-        cell.setCellUI()
-        if indexPath.row == 0 {
-            cell.textLabel?.text = "Hello Piyush very nice for the first program, Hello Piyush very nice for the first program"
-        } else {
-            cell.textLabel?.text = "Hello very nice for the cell creation"
+        let cell = WPListTableViewCell(style: .subtitle, reuseIdentifier: KConstant.cellIdentifier)
+        if self.arrayDataList.count > indexPath.row {
+            let dataInfo = self.arrayDataList[indexPath.row]
+            cell.setCellInfo(info: dataInfo)
         }
         return cell
     }
-    
     
 }

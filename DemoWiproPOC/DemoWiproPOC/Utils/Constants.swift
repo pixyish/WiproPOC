@@ -7,5 +7,7 @@
 //
 
 struct KConstant {
+    static let url = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
     static let cellIdentifier = "Cell"
+    static let indicatorTitle = "Loading"
 }
