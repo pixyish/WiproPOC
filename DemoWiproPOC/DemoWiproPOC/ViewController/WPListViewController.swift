@@ -10,7 +10,7 @@ import UIKit
 
 class WPListViewController: UIViewController {
     
-    private var tblView = UITableView()
+    var tblView = UITableView()
     private let refreshControl = UIRefreshControl()
     private var arrayDataList = [Rows]()
     
