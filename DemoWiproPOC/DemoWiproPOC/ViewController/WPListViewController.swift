@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WPListViewController.swift
 //  DemoWiproPOC
 //
 //  Created by Piyush on 08/10/20.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class WPListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
     }
-
-
+    
+    
 }
-

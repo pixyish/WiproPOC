@@ -9,12 +9,10 @@
 /* Begin PBXBuildFile section */
 		4BF219FB252EFB51004237CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF219FA252EFB51004237CE /* AppDelegate.swift */; };
 		4BF219FD252EFB51004237CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF219FC252EFB51004237CE /* SceneDelegate.swift */; };
-		4BF219FF252EFB51004237CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF219FE252EFB51004237CE /* ViewController.swift */; };
-		4BF21A02252EFB51004237CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BF21A00252EFB51004237CE /* Main.storyboard */; };
 		4BF21A04252EFB54004237CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BF21A03252EFB54004237CE /* Assets.xcassets */; };
-		4BF21A07252EFB54004237CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BF21A05252EFB54004237CE /* LaunchScreen.storyboard */; };
 		4BF21A12252EFB54004237CE /* DemoWiproPOCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF21A11252EFB54004237CE /* DemoWiproPOCTests.swift */; };
 		4BF21A1D252EFB54004237CE /* DemoWiproPOCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF21A1C252EFB54004237CE /* DemoWiproPOCUITests.swift */; };
+		4BF21A2C252EFDC5004237CE /* WPListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF21A2B252EFDC5004237CE /* WPListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,10 +36,7 @@
 		4BF219F7252EFB51004237CE /* DemoWiproPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoWiproPOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF219FA252EFB51004237CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BF219FC252EFB51004237CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4BF219FE252EFB51004237CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4BF21A01252EFB51004237CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4BF21A03252EFB54004237CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4BF21A06252EFB54004237CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BF21A08252EFB54004237CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BF21A0D252EFB54004237CE /* DemoWiproPOCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoWiproPOCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF21A11252EFB54004237CE /* DemoWiproPOCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoWiproPOCTests.swift; sourceTree = "<group>"; };
@@ -49,6 +44,7 @@
 		4BF21A18252EFB54004237CE /* DemoWiproPOCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoWiproPOCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF21A1C252EFB54004237CE /* DemoWiproPOCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoWiproPOCUITests.swift; sourceTree = "<group>"; };
 		4BF21A1E252EFB54004237CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BF21A2B252EFDC5004237CE /* WPListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +95,10 @@
 		4BF219F9252EFB51004237CE /* DemoWiproPOC */ = {
 			isa = PBXGroup;
 			children = (
+				4BF21A2A252EFDA1004237CE /* ViewController */,
 				4BF219FA252EFB51004237CE /* AppDelegate.swift */,
 				4BF219FC252EFB51004237CE /* SceneDelegate.swift */,
-				4BF219FE252EFB51004237CE /* ViewController.swift */,
-				4BF21A00252EFB51004237CE /* Main.storyboard */,
 				4BF21A03252EFB54004237CE /* Assets.xcassets */,
-				4BF21A05252EFB54004237CE /* LaunchScreen.storyboard */,
 				4BF21A08252EFB54004237CE /* Info.plist */,
 			);
 			path = DemoWiproPOC;
@@ -126,6 +120,14 @@
 				4BF21A1E252EFB54004237CE /* Info.plist */,
 			);
 			path = DemoWiproPOCUITests;
+			sourceTree = "<group>";
+		};
+		4BF21A2A252EFDA1004237CE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4BF21A2B252EFDC5004237CE /* WPListViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +192,7 @@
 		4BF219EF252EFB51004237CE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = WP;
 				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = Piyush;
@@ -232,9 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BF21A07252EFB54004237CE /* LaunchScreen.storyboard in Resources */,
 				4BF21A04252EFB54004237CE /* Assets.xcassets in Resources */,
-				4BF21A02252EFB51004237CE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +260,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BF219FF252EFB51004237CE /* ViewController.swift in Sources */,
 				4BF219FB252EFB51004237CE /* AppDelegate.swift in Sources */,
+				4BF21A2C252EFDC5004237CE /* WPListViewController.swift in Sources */,
 				4BF219FD252EFB51004237CE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,25 +296,6 @@
 			targetProxy = 4BF21A19252EFB54004237CE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		4BF21A00252EFB51004237CE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4BF21A01252EFB51004237CE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4BF21A05252EFB54004237CE /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4BF21A06252EFB54004237CE /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4BF21A1F252EFB54004237CE /* Debug */ = {
