@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class WPListTableViewCell: UITableViewCell {
 
@@ -35,6 +36,7 @@ class WPListTableViewCell: UITableViewCell {
         self.detailTextLabel?.leadingAnchor.constraint(equalTo: margin_ImageView!.leadingAnchor, constant: 50).isActive = true
         self.detailTextLabel?.trailingAnchor.constraint(equalTo: margin_contentView.trailingAnchor, constant: 0).isActive = true
         self.detailTextLabel?.bottomAnchor.constraint(equalTo: margin_contentView.bottomAnchor, constant: 0).isActive = true
+        
     }
     
     required init?(coder: NSCoder) {
@@ -44,7 +46,7 @@ class WPListTableViewCell: UITableViewCell {
     func setCellInfo(info:Rows) {
         self.textLabel?.text = info.title ?? "N/A"
         self.detailTextLabel?.text = info.description  ?? "N/A"
-        
+        self.imageView?.sd_setImage(with: URL(string: info.imageHref ?? ""), placeholderImage: UIImage(named: "placeHolderImgIcon"))
     }
     
 }
