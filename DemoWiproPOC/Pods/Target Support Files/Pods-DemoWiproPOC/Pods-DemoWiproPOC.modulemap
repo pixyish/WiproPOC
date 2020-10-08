@@ -1,0 +1,6 @@
+framework module Pods_DemoWiproPOC {
+  umbrella header "Pods-DemoWiproPOC-umbrella.h"
+
+  export *
+  module * { export * }
+}
