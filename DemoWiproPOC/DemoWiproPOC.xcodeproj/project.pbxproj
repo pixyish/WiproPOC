@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4BEF976A25306EDB0067A74E /* WPListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEF976925306EDB0067A74E /* WPListViewModel.swift */; };
 		4BEF9772253070790067A74E /* WiproUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEF9771253070790067A74E /* WiproUnitTests.swift */; };
+		4BEF977A25307FED0067A74E /* WPListViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEF977925307FED0067A74E /* WPListViewController+Delegate.swift */; };
 		4BF219FB252EFB51004237CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF219FA252EFB51004237CE /* AppDelegate.swift */; };
 		4BF219FD252EFB51004237CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF219FC252EFB51004237CE /* SceneDelegate.swift */; };
 		4BF21A04252EFB54004237CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BF21A03252EFB54004237CE /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		4BEF976F253070780067A74E /* WiproUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WiproUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BEF9771253070790067A74E /* WiproUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiproUnitTests.swift; sourceTree = "<group>"; };
 		4BEF9773253070790067A74E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BEF977925307FED0067A74E /* WPListViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WPListViewController+Delegate.swift"; sourceTree = "<group>"; };
 		4BF219F7252EFB51004237CE /* DemoWiproPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoWiproPOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF219FA252EFB51004237CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BF219FC252EFB51004237CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			children = (
 				4BF21A2B252EFDC5004237CE /* WPListViewController.swift */,
 				4BF21A31252F08D3004237CE /* WPListTableViewCell.swift */,
+				4BEF977925307FED0067A74E /* WPListViewController+Delegate.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 				4BF21A37252F1655004237CE /* WPApiCall.swift in Sources */,
 				4BF21A32252F08D3004237CE /* WPListTableViewCell.swift in Sources */,
 				4BF219FB252EFB51004237CE /* AppDelegate.swift in Sources */,
+				4BEF977A25307FED0067A74E /* WPListViewController+Delegate.swift in Sources */,
 				4BF21A39252F1894004237CE /* WPListInfo.swift in Sources */,
 				4BF21A2C252EFDC5004237CE /* WPListViewController.swift in Sources */,
 				4BF219FD252EFB51004237CE /* SceneDelegate.swift in Sources */,
