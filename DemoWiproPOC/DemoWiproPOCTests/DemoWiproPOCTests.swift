@@ -11,12 +11,14 @@ import XCTest
 
 class DemoWiproPOCTests: XCTestCase {
 
-    var controller = WPListViewController()
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        
+    var controller:WPListViewController?
+    var viewModel:WPListViewModel?
+    
+    override func setUp() {
+        controller = WPListViewController()
+        viewModel = WPListViewModel()
     }
-
+    
     func testAllDataLoaded(){
         var array : [Any] = []
         let config = URLSessionConfiguration.default
@@ -60,25 +62,75 @@ class DemoWiproPOCTests: XCTestCase {
     }
     
     func testControllerHasTableView() {
-        XCTAssertNotNil(controller.tblView,
+        XCTAssertNotNil(controller?.tblView,
                         "Controller should have a tableview")
     }
     
     
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func tearDown() {
+        viewModel = nil
+        controller = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testNetworkConnection() {
+        let networkConnection:Bool = viewModel?.isNetworkConnected(controller: controller ?? WPListViewController()) ?? false
+        XCTAssertTrue(networkConnection)
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testApiCall() {
+        
+        var listRows: [Rows]?
+        WPApiCall.sharedInstance.listAPI(view: controller?.view ?? UIView()) { (success, message, response) in
+            if let rows = response?.rows  {
+                listRows = rows
+            }
+            
+            if let rowCount = listRows {
+                XCTAssertGreaterThan(rowCount.count, 0)
+            }
+            
         }
+        
+        
     }
-
+    
+    func testURLPath() {
+      
+        let mockURLSession  = MockURLSession()
+      WPApiCall.sharedInstance.session = mockURLSession
+        WPApiCall.sharedInstance.listAPI(view: controller?.view ?? UIView()) { (success, message, response) in
+            
+      }
+        XCTAssertEqual(WPApiCall.sharedInstance.session?.cachedUrl?.host, "dl.dropboxusercontent.com")
+        XCTAssertEqual(WPApiCall.sharedInstance.session?.cachedUrl?.path, "/s/2iodh4vg0eortkl/facts.json")
+    }
+    
+    func testTableFeatures() {
+        controller?.listModelView.setTableViewUI(controller: controller)
+        XCTAssertNotNil(controller?.tblView.dataSource)
+        XCTAssertNotNil(controller?.tblView.refreshControl)
+    }
+    
+    func testReloadTableRows()  {
+        controller?.listModelView.setTableViewUI(controller: controller)
+        let row = Rows(with: "sdf", description: "sdf", imgHref: "sdf")
+        controller?.arrayDataList = [row]
+        controller?.listModelView.reloadTableWithEmptyRows()
+        XCTAssertTrue(controller?.arrayDataList.count ?? 5 == 0)
+        
+    }
+    
+    func testCheckWithFilledArray()  {
+        controller?.listModelView.setTableViewUI(controller: controller)
+        let row = Rows(with: "sdf", description: "sdf", imgHref: "sdf")
+        controller?.listModelView.reloadTableWithRows(rows: [row])
+        
+        let numberOfRows = controller?.tblView.numberOfRows(inSection: 0) ?? 0
+        XCTAssertTrue(numberOfRows > 0)
+    }
+    
+    func testCell() {
+        let cell = WPListTableViewCell(style: .subtitle, reuseIdentifier: KConstant.cellIdentifier)
+        XCTAssertNotNil(cell)
+    }
 }

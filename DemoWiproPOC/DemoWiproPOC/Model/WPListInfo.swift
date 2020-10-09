@@ -27,7 +27,11 @@ struct Rows : Codable {
     let title : String?
     let description : String?
     let imageHref : String?
-
+    init(with ttl:String,description:String,imgHref:String) {
+        title = ttl
+        self.description = description
+        imageHref = imgHref
+    }
     enum CodingKeys: String, CodingKey {
         case title = "title"
         case description = "description"
