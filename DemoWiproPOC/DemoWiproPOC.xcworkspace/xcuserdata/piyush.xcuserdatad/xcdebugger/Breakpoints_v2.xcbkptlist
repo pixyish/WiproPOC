@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "A8A65C64-BA23-4BF3-AB67-EF778918D8B0"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "20500658-0547-468E-9871-A57BCB54373A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DemoWiproPOC/ViewModel/WPListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "callApi(controller:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ABD9802E-8B48-4407-AA0A-E8822016854A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DemoWiproPOCTests/DemoWiproPOCTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "testApiCall()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "ABD9802E-8B48-4407-AA0A-E8822016854A - 973f6f545798395f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DemoWiproPOCTests.DemoWiproPOCTests.testApiCall() -&gt; ()"
+                  moduleName = "DemoWiproPOCTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shared/Previously%20Relocated%20Items/Security/WiproPOC/Code/WiproPOC/DemoWiproPOC/DemoWiproPOCTests/DemoWiproPOCTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "130">
+               </Location>
+               <Location
+                  uuid = "ABD9802E-8B48-4407-AA0A-E8822016854A - 587890996c8d3acc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Swift.String, Swift.Optional&lt;DemoWiproPOC.ListInfo&gt;) -&gt; () in DemoWiproPOCTests.DemoWiproPOCTests.testApiCall() -&gt; ()"
+                  moduleName = "DemoWiproPOCTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shared/Previously%20Relocated%20Items/Security/WiproPOC/Code/WiproPOC/DemoWiproPOC/DemoWiproPOCTests/DemoWiproPOCTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "302">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A3C6D127-057A-4470-8320-94AE466158B6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DemoWiproPOCTests/DemoWiproPOCTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "testApiCall()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BFCE44D1-1852-42D2-9B98-B1B92D8987C2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DemoWiproPOCTests/DemoWiproPOCTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "testReloadTableRows()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "16DCEB3D-D7D7-4E65-AE8D-CF53A3AD153A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DemoWiproPOCTests/DemoWiproPOCTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "testReloadTableRows()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

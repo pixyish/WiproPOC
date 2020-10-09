@@ -14,11 +14,10 @@ class DemoWiproPOCTests: XCTestCase {
     var controller:WPListViewController?
     var viewModel:WPListViewModel?
     
-    override func setUp() {
+    override func setUpWithError() throws {
         controller = WPListViewController()
         viewModel = WPListViewModel()
     }
-    
     func testAllDataLoaded(){
         var array : [Any] = []
         let config = URLSessionConfiguration.default
@@ -67,10 +66,11 @@ class DemoWiproPOCTests: XCTestCase {
     }
     
     
-    override func tearDown() {
+    override func tearDownWithError() throws {
         viewModel = nil
         controller = nil
     }
+    
 
     func testNetworkConnection() {
         let networkConnection:Bool = viewModel?.isNetworkConnected(controller: controller ?? WPListViewController()) ?? false
@@ -132,5 +132,13 @@ class DemoWiproPOCTests: XCTestCase {
     func testCell() {
         let cell = WPListTableViewCell(style: .subtitle, reuseIdentifier: KConstant.cellIdentifier)
         XCTAssertNotNil(cell)
+    }
+    
+    func testCellInfo() {
+        let cell = WPListTableViewCell(style: .subtitle, reuseIdentifier: KConstant.cellIdentifier)
+        let row = Rows(with: "Public", description: "Normal vote", imgHref: "sdf")
+        cell.setCellInfo(info: row)
+        let cellTitle = cell.textLabel?.text ?? ""
+        XCTAssertEqual(cellTitle,"Public")
     }
 }

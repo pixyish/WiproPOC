@@ -26,13 +26,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4BEF9774253070790067A74E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4BF219EF252EFB51004237CE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4BF219F6252EFB51004237CE;
-			remoteInfo = DemoWiproPOC;
-		};
 		4BF21A0E252EFB54004237CE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4BF219EF252EFB51004237CE /* Project object */;
@@ -53,7 +46,6 @@
 		2B207ADE1EA59982DC7C9C1E /* Pods-DemoWiproPOCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoWiproPOCTests.release.xcconfig"; path = "Target Support Files/Pods-DemoWiproPOCTests/Pods-DemoWiproPOCTests.release.xcconfig"; sourceTree = "<group>"; };
 		393B161EA1E539A237DAFED9 /* Pods-DemoWiproPOC-DemoWiproPOCUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoWiproPOC-DemoWiproPOCUITests.debug.xcconfig"; path = "Target Support Files/Pods-DemoWiproPOC-DemoWiproPOCUITests/Pods-DemoWiproPOC-DemoWiproPOCUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4BEF976925306EDB0067A74E /* WPListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPListViewModel.swift; sourceTree = "<group>"; };
-		4BEF976F253070780067A74E /* WiproUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WiproUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BEF977925307FED0067A74E /* WPListViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WPListViewController+Delegate.swift"; sourceTree = "<group>"; };
 		4BF219F7252EFB51004237CE /* DemoWiproPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoWiproPOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF219FA252EFB51004237CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,13 +74,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4BEF976C253070780067A74E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4BF219F4252EFB51004237CE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -165,7 +150,6 @@
 				4BF219F7252EFB51004237CE /* DemoWiproPOC.app */,
 				4BF21A0D252EFB54004237CE /* DemoWiproPOCTests.xctest */,
 				4BF21A18252EFB54004237CE /* DemoWiproPOCUITests.xctest */,
-				4BEF976F253070780067A74E /* WiproUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -242,24 +226,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4BEF976E253070780067A74E /* WiproUnitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4BEF9776253070790067A74E /* Build configuration list for PBXNativeTarget "WiproUnitTests" */;
-			buildPhases = (
-				4BEF976B253070780067A74E /* Sources */,
-				4BEF976C253070780067A74E /* Frameworks */,
-				4BEF976D253070780067A74E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4BEF9775253070790067A74E /* PBXTargetDependency */,
-			);
-			name = WiproUnitTests;
-			productName = WiproUnitTests;
-			productReference = 4BEF976F253070780067A74E /* WiproUnitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		4BF219F6252EFB51004237CE /* DemoWiproPOC */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4BF21A21252EFB54004237CE /* Build configuration list for PBXNativeTarget "DemoWiproPOC" */;
@@ -329,10 +295,6 @@
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = Piyush;
 				TargetAttributes = {
-					4BEF976E253070780067A74E = {
-						CreatedOnToolsVersion = 11.5;
-						TestTargetID = 4BF219F6252EFB51004237CE;
-					};
 					4BF219F6252EFB51004237CE = {
 						CreatedOnToolsVersion = 11.5;
 					};
@@ -362,19 +324,11 @@
 				4BF219F6252EFB51004237CE /* DemoWiproPOC */,
 				4BF21A0C252EFB54004237CE /* DemoWiproPOCTests */,
 				4BF21A17252EFB54004237CE /* DemoWiproPOCUITests */,
-				4BEF976E253070780067A74E /* WiproUnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4BEF976D253070780067A74E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4BF219F5252EFB51004237CE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -503,13 +457,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4BEF976B253070780067A74E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4BF219F3252EFB51004237CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -546,11 +493,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4BEF9775253070790067A74E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4BF219F6252EFB51004237CE /* DemoWiproPOC */;
-			targetProxy = 4BEF9774253070790067A74E /* PBXContainerItemProxy */;
-		};
 		4BF21A0F252EFB54004237CE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4BF219F6252EFB51004237CE /* DemoWiproPOC */;
@@ -564,44 +506,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		4BEF9777253070790067A74E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = WiproUnitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = Wipro.WiproUnitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoWiproPOC.app/DemoWiproPOC";
-			};
-			name = Debug;
-		};
-		4BEF9778253070790067A74E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = WiproUnitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = Wipro.WiproUnitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoWiproPOC.app/DemoWiproPOC";
-			};
-			name = Release;
-		};
 		4BF21A1F252EFB54004237CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -841,15 +745,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4BEF9776253070790067A74E /* Build configuration list for PBXNativeTarget "WiproUnitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4BEF9777253070790067A74E /* Debug */,
-				4BEF9778253070790067A74E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4BF219F2252EFB51004237CE /* Build configuration list for PBXProject "DemoWiproPOC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
