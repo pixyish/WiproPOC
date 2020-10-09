@@ -13,7 +13,7 @@ class WPListViewController: UIViewController {
     var tblView = UITableView()
     private let refreshControl = UIRefreshControl()
     private var arrayDataList = [Rows]()
-    
+    private var listModelView = WPListViewModel()
     //MARK :- Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,51 +46,18 @@ class WPListViewController: UIViewController {
         // implementing pull to refresh functionality in tableview
         self.tblView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refreshItemData(_:)), for: .valueChanged)
-        
-        self.callApi()
+        listModelView.delegate = self
+        listModelView.callApi(controller: self)
     }
     
     //pull feature
     @objc private func refreshItemData(_ sender: Any) {
         // Fetch item Data by using pull to refresh
-        self.callApi()
+        listModelView.callApi(controller: self)
         self.refreshControl.endRefreshing()
     }
     
-    // api call
-    func callApi() {
-        
-        let status = Reach().connectionStatus()
-        switch status {
-        case .unknown, .offline:
-            self.showAlert(_title_str: "You are not connected to the internet")
-            return
-            
-        case .online(.wwan):
-            print("Connected via WWAN")
-        case .online(.wiFi):
-            print("Connected via WiFi")
-        }
-        
-        WPApiCall.sharedInstance.listAPI(view: self.view) { [weak self] (success, message, response) in
-           if success && message.isEmpty {
-                DispatchQueue.main.async {
-                    Loader.hideIndicator(View: self?.view ?? UIView())
-                }
-                self?.arrayDataList.removeAll()
-                if let rows = response?.rows {
-                    self?.arrayDataList = rows
-                        // update UI using the response here
-                        DispatchQueue.main.async {
-                            self?.navigationItem.title = response?.title
-                            let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
-                            self?.navigationController?.navigationBar.titleTextAttributes = textAttributes
-                            self?.tblView.reloadData()
-                    }
-                }
-            }
-        }
-    }
+    
 }
 
 // MARK :- UITableViewDataSource,UITableViewDelegate
@@ -98,7 +65,6 @@ extension WPListViewController: UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.arrayDataList.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = WPListTableViewCell(style: .subtitle, reuseIdentifier: KConstant.cellIdentifier)
@@ -108,5 +74,23 @@ extension WPListViewController: UITableViewDataSource,UITableViewDelegate{
         }
         return cell
     }
+}
+
+extension WPListViewController:WPListViewModelDelegate {
+    func getDataFromApicall(Rows: [Rows],title:String) {
+        self.arrayDataList.removeAll()
+        self.arrayDataList = Rows
+        // update UI using the response here
+        self.navigationItem.title = title
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = textAttributes
+        self.tblView.reloadData()
+    }
+    
+    func getApiError(errMsg: String) {
+        self.arrayDataList.removeAll()
+        self.tblView.reloadData()
+    }
+    
     
 }
