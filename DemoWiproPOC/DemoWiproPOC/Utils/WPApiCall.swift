@@ -20,16 +20,17 @@ class MockURLSession: URLSession {
 class WPApiCall: NSObject {
     
     static let sharedInstance = WPApiCall()
-    var session:MockURLSession?
+    
+    let session = URLSession(configuration: .default)
+
     func listAPI (view : UIView,  completionHandler: @escaping (_ success: Bool, _ message: String, _ response : ListInfo?) -> Void) {
         
         DispatchQueue.main.async {
             Loader.showIndicator(withTitle: KConstant.indicatorTitle, and: "", and : view)
         }
 
-        session = MockURLSession()
         let url = URL(string: KConstant.url)!
-        let task = session?.dataTask(with: url) { data, response, error in
+        let task = session.dataTask(with: url) { data, response, error in
             // if there is no error for this  response
             guard error == nil else {
                 print ("error: \(error!)")
@@ -57,7 +58,7 @@ class WPApiCall: NSObject {
             }
         }
         // execute the HTTP request
-        task?.resume()
+        task.resume()
     }
     
     func parseObject<T: Codable>(_: T.Type, data: [String: Any]) -> T? {
