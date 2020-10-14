@@ -22,6 +22,7 @@ class WPApiCall: NSObject {
     static let sharedInstance = WPApiCall()
     
     let session = URLSession(configuration: .default)
+    var testSession = MockURLSession()
 
     func listAPI (view : UIView,  completionHandler: @escaping (_ success: Bool, _ message: String, _ response : ListInfo?) -> Void) {
         

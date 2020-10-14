@@ -97,12 +97,12 @@ class DemoWiproPOCTests: XCTestCase {
     func testURLPath() {
       
         let mockURLSession  = MockURLSession()
-      WPApiCall.sharedInstance.session = mockURLSession
+        WPApiCall.sharedInstance.testSession = mockURLSession
         WPApiCall.sharedInstance.listAPI(view: controller?.view ?? UIView()) { (success, message, response) in
             
-      }
-        XCTAssertEqual(WPApiCall.sharedInstance.session?.cachedUrl?.host, "dl.dropboxusercontent.com")
-        XCTAssertEqual(WPApiCall.sharedInstance.session?.cachedUrl?.path, "/s/2iodh4vg0eortkl/facts.json")
+            XCTAssertEqual(WPApiCall.sharedInstance.testSession.cachedUrl?.host, "dl.dropboxusercontent.com")
+            XCTAssertEqual(WPApiCall.sharedInstance.testSession.cachedUrl?.path, "/s/2iodh4vg0eortkl/facts.json")
+        }
     }
     
     func testTableFeatures() {

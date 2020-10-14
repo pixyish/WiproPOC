@@ -20,14 +20,59 @@
                ReferencedContainer = "container:DemoWiproPOC.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4BC0E45E2536930F0037A810"
+               BuildableName = "DemoWiproPOCTest.xctest"
+               BlueprintName = "DemoWiproPOCTest"
+               ReferencedContainer = "container:DemoWiproPOC.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "4BF219F6252EFB51004237CE"
+            BuildableName = "DemoWiproPOC.app"
+            BlueprintName = "DemoWiproPOC"
+            ReferencedContainer = "container:DemoWiproPOC.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4BC0E45E2536930F0037A810"
+               BuildableName = "DemoWiproPOCTest.xctest"
+               BlueprintName = "DemoWiproPOCTest"
+               ReferencedContainer = "container:DemoWiproPOC.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4BF21A17252EFB54004237CE"
+               BuildableName = "DemoWiproPOCUITests.xctest"
+               BlueprintName = "DemoWiproPOCUITests"
+               ReferencedContainer = "container:DemoWiproPOC.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
