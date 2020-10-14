@@ -54,6 +54,8 @@ class WPApiCall: NSObject {
                         print(result.self)
                         completionHandler(true,"",result)
                     }
+                } else {
+                    Loader.hideIndicator(View: view)
                 }
             }
         }
